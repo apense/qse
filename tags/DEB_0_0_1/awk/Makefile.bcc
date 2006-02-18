@@ -1,0 +1,20 @@
+SRCS = awk.c parse.c tree.c
+OBJS = $(SRCS:.c=.obj)
+OUT = xpawk.lib
+
+CC = bcc32
+CFLAGS = -O2 -WM -w -w-inl -w-sig -w-spa -w-hid -RT- -I../..
+
+all: $(OBJS)
+	tlib $(OUT) @&&!
++-$(**: = &^
++-)
+!
+
+clean:
+	del $(OBJS) $(OUT) *.obj
+
+.SUFFIXES: .c .obj
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+

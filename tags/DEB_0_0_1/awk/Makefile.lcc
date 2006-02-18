@@ -1,0 +1,18 @@
+SRCS = awk.c tree.c parse.c run.c sa.c
+OBJS = awk.obj tree.obj parse.obj run.obj tree.obj
+OUT = xpawk.lib
+
+CC = lcc
+CFLAGS = -I../..  -A -ansic -libcdll  -D__STAND_ALONE
+LDFLAGS =
+LIBS = 
+
+all: $(OBJS)
+	lcclib $(OUT) $(OBJS) 
+
+clean:
+	del $(OBJS) $(OUT) *.obj
+
+.SUFFIXES: .c .obj
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
