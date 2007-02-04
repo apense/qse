@@ -1,0 +1,26 @@
+OUT = aseawk
+
+C_SRCS = awk.c err.c tree.c str.c tab.c map.c parse.c \
+	run.c rec.c val.c func.c misc.c extio.c rex.c
+C_OBJS = $(C_SRCS:.c=.o)
+
+CC = @CC@
+AR = ar
+RANLIB = @RANLIB@
+CFLAGS = @CFLAGS@ -I@abs_top_builddir@/..
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+
+all: lib 
+
+lib: $(C_OBJS)
+	$(AR) cr lib$(OUT).a $(C_OBJS)
+	if [ "$(RANLIB)" = "ranlib" ]; then ranlib libaseawk.a; fi
+
+clean:
+	rm -rf $(OBJS) lib$(OUT).a *.o
+
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CFLAGS) -c $<
+

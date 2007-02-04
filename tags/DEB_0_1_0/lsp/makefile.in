@@ -1,0 +1,20 @@
+SRCS = lsp.c name.c mem.c env.c err.c read.c eval.c print.c misc.c \
+	prim.c prim_prog.c prim_let.c prim_compar.c prim_math.c
+OBJS = $(SRCS:.c=.o)
+OUT = libaselsp.a
+
+CC = @CC@
+AR = ar
+CFLAGS = @CFLAGS@ -I@abs_top_builddir@/..
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+
+all: $(OBJS)
+	$(AR) cr $(OUT) $(OBJS)
+
+clean:
+	rm -rf $(OBJS) $(OUT) *.o
+
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CFLAGS) -c $<
