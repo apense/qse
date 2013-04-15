@@ -5949,6 +5949,7 @@ static int get_reference (
 			run, tgt, (qse_awk_val_t**)&QSE_HTB_VPTR(pair));
 		if (tmp == QSE_NULL) return -1;
 		*ref = tmp;
+		return 0;
 	}
 
 	if (nde->type == QSE_AWK_NDE_GBLIDX)
@@ -5957,6 +5958,7 @@ static int get_reference (
 			(qse_awk_val_t**)&STACK_GBL(run,tgt->id.idxa));
 		if (tmp == QSE_NULL) return -1;
 		*ref = tmp;
+		return 0;
 	}
 
 	if (nde->type == QSE_AWK_NDE_LCLIDX)
@@ -5965,6 +5967,7 @@ static int get_reference (
 			(qse_awk_val_t**)&STACK_LCL(run,tgt->id.idxa));
 		if (tmp == QSE_NULL) return -1;
 		*ref = tmp;
+		return 0;
 	}
 
 	if (nde->type == QSE_AWK_NDE_ARGIDX)
@@ -5973,6 +5976,7 @@ static int get_reference (
 			(qse_awk_val_t**)&STACK_ARG(run,tgt->id.idxa));
 		if (tmp == QSE_NULL) return -1;
 		*ref = tmp;
+		return 0;
 	}
 
 	if (nde->type == QSE_AWK_NDE_POS)
