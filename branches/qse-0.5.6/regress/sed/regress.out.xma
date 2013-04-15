@@ -1,0 +1,123 @@
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000 -n -r -f s001.sed s001.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+ab...c AAA
+
+de...f
+gh...i AAA1
+
+jk...l
+mn...o
+pq...r AAA2
+
+
+
+kbs ddd
+dif cccc
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s002.sed s002.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+ab...c AAA
+
+de...f
+gh...i AAA1
+
+jk...l
+mn...o
+pq...r AAA2
+
+
+
+kbs ddd
+dif cccc
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s003.sed s003.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+ab...c AAA
+
+de...f
+gh...i AAA1
+
+jk...l
+mn...o
+pq...r AAA2
+
+
+
+kbs ddd
+dif cccc
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s004.sed s004.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+linux {
+HOST: com.com
+ADDRESS: 45.34.34.33
+}
+
+
+linux {
+HOST: com.com
+ADDRESS: 45.34.34.33
+}
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s005.sed s005.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+1
+-------------------
+2
+3
+-------------------
+4
+5
+-------------------
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s006.sed s006.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+-------------------
+1
+2
+-------------------
+3
+4
+-------------------
+5
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000  -f s007.sed s007.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+
+# copy binaries to ramdisk
+cp -a /bin/* /ramdisk/busybin/
+echo -n "done${CRE}"
+#COPY DISK TO /ramdisk/cdrom
+if [ -n "$FROMINIT" ];then
+	cp -af /image/* /ramdisk/cdrom/
+fi
+
+
+# copy binaries again to ramdisk
+cp -a /bin/* /ramdisk/busybin/
+echo -n "done${CRE}"
+#COPY DISK TO /ramdisk/cdrom
+if [ -n "$FROMINIT" ];then
+	cp -af /image/* /ramdisk/cdrom/
+fi
+--------------------------------------------------------------------------------
+[CMD]  qsesed -m 500000 -w -f s008.sed s008.dat </dev/stdin 2>&1 
+--------------------------------------------------------------------------------
+
+# copy binaries to ramdisk
+cp -a /bin/* /ramdisk/busybin/
+echo -n "done${CRE}"
+#COPY DISK TO /ramdisk/cdrom
+if [ -n "$FROMINIT" ];then
+	cp -af /image/* /ramdisk/cdrom/
+fi
+
+
+# copy binaries again to ramdisk
+cp -a /bin/* /ramdisk/busybin/
+echo -n "done${CRE}"
+#COPY DISK TO /ramdisk/cdrom
+if [ -n "$FROMINIT" ];then
+	cp -af /image/* /ramdisk/cdrom/
+fi

@@ -1,0 +1,9 @@
+AUTOMAKE_OPTION = foreign
+ACLOCAL_AMFLAGS = -I m4
+
+EXTRA_DIST = LICENSE
+SUBDIRS = include lib cmd 
+DIST_SUBDIRS = $(SUBDIRS) regress samples doc tools
+
+distclean-local:
+	$(RM) -r autom4te.cache
